@@ -20,7 +20,7 @@
             margin: 0;
         }
         </style>
-        <title>Nova Scotia Lichen Data Viewer</title>
+        <title>Nova Scotia Lichen Species At Risk Data Viewer</title>
     </head>
     <body>
         <div id="map">
@@ -103,9 +103,6 @@
         function pop_MTRISearchTracks_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID_1'] !== null ? autolinker.link(feature.properties['OBJECTID_1'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -128,42 +125,6 @@
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Shape_Leng'] !== null ? autolinker.link(feature.properties['Shape_Leng'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Observer'] !== null ? autolinker.link(feature.properties['Observer'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Block'] !== null ? autolinker.link(feature.properties['Block'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['TIME'] !== null ? autolinker.link(feature.properties['TIME'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LTIME'] !== null ? autolinker.link(feature.properties['LTIME'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['IDENT'] !== null ? autolinker.link(feature.properties['IDENT'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LAT'] !== null ? autolinker.link(feature.properties['LAT'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['LONG'] !== null ? autolinker.link(feature.properties['LONG'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Y_PROJ'] !== null ? autolinker.link(feature.properties['Y_PROJ'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['X_PROJ'] !== null ? autolinker.link(feature.properties['X_PROJ'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['TYPE'] !== null ? autolinker.link(feature.properties['TYPE'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Block_Name'] !== null ? autolinker.link(feature.properties['Block_Name'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Shape_Length'] !== null ? autolinker.link(feature.properties['Shape_Length'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -198,101 +159,92 @@
         function pop_ScientificName_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">N::NNAME</th>\
+                        <td>' + (feature.properties['SCINAME'] !== null ? autolinker.link(feature.properties['SCINAME'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['MCODE'] !== null ? autolinker.link(feature.properties['MCODE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">N::NCOMNAME</th>\
+                        <td>' + (feature.properties['COMNAME'] !== null ? autolinker.link(feature.properties['COMNAME'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ELCODE'] !== null ? autolinker.link(feature.properties['ELCODE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">N::IUCN</th>\
+                        <td>' + (feature.properties['IUCN'] !== null ? autolinker.link(feature.properties['IUCN'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['SUBNAT'] !== null ? autolinker.link(feature.properties['SUBNAT'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">N::NPROT</th>\
+                        <td>' + (feature.properties['NPROT'] !== null ? autolinker.link(feature.properties['NPROT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['SCINAME'] !== null ? autolinker.link(feature.properties['SCINAME'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">N::NPROTsar</th>\
+                        <td>' + (feature.properties['NPROTSAR'] !== null ? autolinker.link(feature.properties['NPROTSAR'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['COMNAME'] !== null ? autolinker.link(feature.properties['COMNAME'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">S::SProt</th>\
+                        <td>' + (feature.properties['SPROT'] !== null ? autolinker.link(feature.properties['SPROT'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['NOMCOMMUN'] !== null ? autolinker.link(feature.properties['NOMCOMMUN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['IUCN'] !== null ? autolinker.link(feature.properties['IUCN'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['GRANK'] !== null ? autolinker.link(feature.properties['GRANK'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NPROT'] !== null ? autolinker.link(feature.properties['NPROT'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NPROTSAR'] !== null ? autolinker.link(feature.properties['NPROTSAR'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SPROT'] !== null ? autolinker.link(feature.properties['SPROT'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['SRANK'] !== null ? autolinker.link(feature.properties['SRANK'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['PROJ'] !== null ? autolinker.link(feature.properties['PROJ'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['PREC'] !== null ? autolinker.link(feature.properties['PREC'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">S::SRank</th>\
+                        <td>' + (feature.properties['SRANK'] !== null ? autolinker.link(feature.properties['SRANK'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">LOCUNCM</th>\
                         <td>' + (feature.properties['LOCUNCM'] !== null ? autolinker.link(feature.properties['LOCUNCM'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['LONDEC'] !== null ? autolinker.link(feature.properties['LONDEC'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">LONDEC</th>\
+                        <td>' + (feature.properties['LONDEC'] !== null ? autolinker.link(feature.properties['LONDEC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['LATDEC'] !== null ? autolinker.link(feature.properties['LATDEC'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">LATDEC</th>\
+                        <td>' + (feature.properties['LATDEC'] !== null ? autolinker.link(feature.properties['LATDEC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['UTME20'] !== null ? autolinker.link(feature.properties['UTME20'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">utmE20p</th>\
+                        <td>' + (feature.properties['UTME20'] !== null ? autolinker.link(feature.properties['UTME20'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['UTMN20'] !== null ? autolinker.link(feature.properties['UTMN20'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">utmN20p</th>\
+                        <td>' + (feature.properties['UTMN20'] !== null ? autolinker.link(feature.properties['UTMN20'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['COCODE'] !== null ? autolinker.link(feature.properties['COCODE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">SURVEYSITE</th>\
+                        <td>' + (feature.properties['SURVEYSITE'] !== null ? autolinker.link(feature.properties['SURVEYSITE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['MAPCODE'] !== null ? autolinker.link(feature.properties['MAPCODE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">DIRECTIONS</th>\
+                        <td>' + (feature.properties['DIRECTIONS'] !== null ? autolinker.link(feature.properties['DIRECTIONS'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['SURVEYSITE'] !== null ? autolinker.link(feature.properties['SURVEYSITE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">OBDATE</th>\
+                        <td>' + (feature.properties['OBDATE'] !== null ? autolinker.link(feature.properties['OBDATE'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['DIRECTIONS'] !== null ? autolinker.link(feature.properties['DIRECTIONS'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">OBSERVER</th>\
+                        <td>' + (feature.properties['OBSERVER'] !== null ? autolinker.link(feature.properties['OBSERVER'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['OBDATE'] !== null ? autolinker.link(feature.properties['OBDATE'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">OBDATA</th>\
+                        <td>' + (feature.properties['OBDATA'] !== null ? autolinker.link(feature.properties['OBDATA'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['OBSERVER'] !== null ? autolinker.link(feature.properties['OBSERVER'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">GENDESC</th>\
+                        <td>' + (feature.properties['GENDESC'] !== null ? autolinker.link(feature.properties['GENDESC'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['OBDATA'] !== null ? autolinker.link(feature.properties['OBDATA'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">GENCOM</th>\
+                        <td>' + (feature.properties['GENCOM'] !== null ? autolinker.link(feature.properties['GENCOM'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['GENDESC'] !== null ? autolinker.link(feature.properties['GENDESC'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">SC::CitationLong</th>\
+                        <td>' + (feature.properties['CITATION'] !== null ? autolinker.link(feature.properties['CITATION'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['GENCOM'] !== null ? autolinker.link(feature.properties['GENCOM'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">IDNUM</th>\
+                        <td>' + (feature.properties['IDNUM'] !== null ? autolinker.link(feature.properties['IDNUM'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['CITATION'] !== null ? autolinker.link(feature.properties['CITATION'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['IDNUM'] !== null ? autolinker.link(feature.properties['IDNUM'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['EDITION'] !== null ? autolinker.link(feature.properties['EDITION'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">EDITION</th>\
+                        <td>' + (feature.properties['EDITION'] !== null ? autolinker.link(feature.properties['EDITION'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -505,7 +457,7 @@
                 return this._div;
             };
             title.update = function () {
-                this._div.innerHTML = '<h2>Nova Scotia Lichen Data Viewer</h2>';
+                this._div.innerHTML = '<h2>Nova Scotia Lichen Species At Risk Data Viewer</h2>';
             };
             title.addTo(map);
             var abstract = new L.Control({'position':'topleft'});
@@ -526,7 +478,7 @@
                 abstract.show = function () {
                     this._div.classList.remove("abstract");
                     this._div.classList.add("abstractUncollapsed");
-                    this._div.innerHTML = 'Lichen Species at Risk records in the AC CDC Database as of 2023-03-15. Note that not all records are precise - each record has a "location uncertainty" value which represents the distance in metres the coordinates could be from the true location. If performance is slow, you can download the viewer to your desktop. To make that request, ask questions or provide feedback please contact: dataRequests@acccdc.ca. <br /><br />Filtering species: ___<br /><br />Getting coordinates from the map: ___';
+                    this._div.innerHTML = 'Lichen Species at Risk records in the AC CDC Database as of 2023-03-15. Note that record location precision varies. Each record has a "location uncertainty" value which represents the distance in metres the coordinates could be from the true location. If performance is slow, you can download the viewer to your desktop (see below).<br /><br />Data Use Guidelines<br />-----------------------<br />...<br /><br />Instructions<br />--------------<br /><br />To filter by species:<br />* To see points for a single species click the name in the table on the right <br />* To see points for multiple species, click multiple species in the table while holding CTRL <br />* To clear the filter, and show all species, click ‘clear filter’ below the table<br /><br />To search for a location:<br />* This is currently a finicky tool<br />* Enter a placename in the search box and press ENTER<br />* Use arrows on your keyboard to select location of interest and press ENTER<br />* Note: the mouse will not work with this tool<br /><br />To get coordinates from the map:<br />* choose create new measurement and click on the map at the location of interest<br /><br />Contact:<br />* To request a downloadable version of the web app for offline use, to ask questions or to provide feedback please contact: dataRequests@accdc.ca. <br />';
             };
             abstract.addTo(map);
         var osmGeocoder = new L.Control.Geocoder({
@@ -659,7 +611,7 @@
             document.getElementById("menu").appendChild(div_SCINAME);
             sel_SCINAME = document.createElement('select');
             sel_SCINAME.multiple = true;
-            sel_SCINAME.size = 10;
+            sel_SCINAME.size = 9;
             sel_SCINAME.id = "sel_SCINAME";
             var SCINAME_options_str = "<option value='' unselected></option>";
             sel_SCINAME.onchange = function(){filterFunc()};
@@ -669,7 +621,6 @@
             SCINAME_options_str  += '<option value="Fuscopannaria leucosticta">Fuscopannaria leucosticta</option>';
             SCINAME_options_str  += '<option value="Heterodermia squamulosa">Heterodermia squamulosa</option>';
             SCINAME_options_str  += '<option value="Pannaria lurida">Pannaria lurida</option>';
-            SCINAME_options_str  += '<option value="Pannaria lurida ssp. russellii">Pannaria lurida ssp. russellii</option>';
             SCINAME_options_str  += '<option value="Pectenia plumbea">Pectenia plumbea</option>';
             SCINAME_options_str  += '<option value="Peltigera hydrothyria">Peltigera hydrothyria</option>';
             SCINAME_options_str  += '<option value="Sclerophora peronella (Atlantic pop.)">Sclerophora peronella (Atlantic pop.)</option>';
